@@ -388,11 +388,10 @@ export default function HomePage() {
 
       <div className="my-16 px-4">
         <video
-          controls
           autoPlay
           loop
           muted
-          className="w-full max-w-xl mx-auto rounded-lg shadow-lg"
+          className="w-full max-w-3xl mx-auto rounded-lg shadow-lg"
         >
           <source src="/video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
