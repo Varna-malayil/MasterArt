@@ -251,7 +251,7 @@ export default function CategoryPage() {
                     <div className="relative h-72 overflow-hidden">
                       <img
                         src={painting.image}
-                        alt={painting.title}
+                        alt={`Artwork ${painting.id}`}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -284,7 +284,7 @@ export default function CategoryPage() {
                     <div className="relative h-64">
                       <img
                         src={painting.image}
-                        alt={painting.title}
+                        alt={`Artwork ${painting.id}`}
                         className="w-full h-full object-cover"
                       />
                     </div>

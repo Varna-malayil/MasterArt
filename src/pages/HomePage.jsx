@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
-import { Button } from "../components/ui/button"
-import { Card, CardContent } from "../components/ui/card"
-import { Menu, X, Play, Info, Eye } from "lucide-react"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Button } from "../components/ui/button";
+import { Card, CardContent } from "../components/ui/card";
+import { Menu, X, Play, Info, Eye } from "lucide-react";
 
 export default function HomePage() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const paintings = [
     {
@@ -71,7 +71,7 @@ export default function HomePage() {
       artist: "Thomas Wilson",
       image: "/placeholder-hmuxq.png",
     },
-  ]
+  ];
 
   const categories = [
     {
@@ -99,7 +99,7 @@ export default function HomePage() {
       image: "/placeholder-gxktr.png",
       count: 15,
     },
-  ]
+  ];
 
   const trendingArtworks = [
     {
@@ -109,27 +109,51 @@ export default function HomePage() {
       image: "/abstract-colorful-painting-with-flowing-shapes.jpg",
       views: "2.1K",
     },
-    { id: 2, title: "Golden Hour", artist: "Marcus Rivera", image: "/placeholder-lok48.png", views: "1.8K" },
-    { id: 3, title: "Ocean Dreams", artist: "Luna Park", image: "/placeholder-dxt7p.png", views: "1.5K" },
-    { id: 4, title: "Urban Poetry", artist: "Alex Thompson", image: "/placeholder-5go6p.png", views: "1.2K" },
-    { id: 5, title: "Forest Whispers", artist: "Maya Singh", image: "/placeholder-1akp4.png", views: "980" },
-  ]
+    {
+      id: 2,
+      title: "Golden Hour",
+      artist: "Marcus Rivera",
+      image: "/placeholder-lok48.png",
+      views: "1.8K",
+    },
+    {
+      id: 3,
+      title: "Ocean Dreams",
+      artist: "Luna Park",
+      image: "/placeholder-dxt7p.png",
+      views: "1.5K",
+    },
+    {
+      id: 4,
+      title: "Urban Poetry",
+      artist: "Alex Thompson",
+      image: "/placeholder-5go6p.png",
+      views: "1.2K",
+    },
+    {
+      id: 5,
+      title: "Forest Whispers",
+      artist: "Maya Singh",
+      image: "/placeholder-1akp4.png",
+      views: "980",
+    },
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % paintings.length)
-    }, 5000)
+      setCurrentSlide((prev) => (prev + 1) % paintings.length);
+    }, 5000);
 
-    return () => clearInterval(interval)
-  }, [paintings.length])
+    return () => clearInterval(interval);
+  }, [paintings.length]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % paintings.length)
-  }
+    setCurrentSlide((prev) => (prev + 1) % paintings.length);
+  };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + paintings.length) % paintings.length)
-  }
+    setCurrentSlide((prev) => (prev - 1 + paintings.length) % paintings.length);
+  };
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -151,19 +175,24 @@ export default function HomePage() {
 
               {/* Desktop Navigation */}
               <nav className="hidden md:flex items-center space-x-8">
-                <Link to="/" className="text-white hover:text-purple-400 transition-colors font-medium">
+                <Link
+                  href="/"
+                  className="text-white hover:text-purple-400 transition-colors font-medium"
+                >
                   Home
                 </Link>
-                <Link to="/showcase" className="text-gray-300 hover:text-white transition-colors">
+                <Link
+                  href="/showcase"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Showcase
                 </Link>
-                <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">
+                <Link
+                  href="/contact"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Contact
                 </Link>
-                <Link to="/news" className="text-gray-300 hover:text-white transition-colors">
-                  News
-                </Link>
-                <Button className="bg-purple-600 hover:bg-purple-700 text-white px-6">Sign In</Button>
               </nav>
 
               {/* Mobile Menu Button */}
@@ -183,17 +212,23 @@ export default function HomePage() {
         {isMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-sm border-b border-gray-800 z-40">
             <nav className="container mx-auto px-4 py-4 space-y-4">
-              <Link to="/" className="block text-white hover:text-purple-400 transition-colors">
+              <Link
+                href="/"
+                className="block text-white hover:text-purple-400 transition-colors"
+              >
                 Home
               </Link>
-              <Link to="/showcase" className="block text-gray-300 hover:text-white transition-colors">
+              <Link
+                href="/showcase"
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
                 Showcase
               </Link>
-              <Link to="/contact" className="block text-gray-300 hover:text-white transition-colors">
+              <Link
+                href="/contact"
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
                 Contact
-              </Link>
-              <Link to="/news" className="block text-gray-300 hover:text-white transition-colors">
-                News
               </Link>
             </nav>
           </div>
@@ -229,13 +264,19 @@ export default function HomePage() {
                 <br />
                 masterpieces, and
                 <br />
-                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">more</span>
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  more
+                </span>
               </h1>
               <p className="text-xl text-gray-300 mb-8 text-pretty">
-                Discover thousands of premium artworks from world-renowned artists. Start your artistic journey today.
+                Discover thousands of premium artworks from world-renowned
+                artists. Start your artistic journey today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 text-lg">
+                <Button
+                  size="lg"
+                  className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 text-lg"
+                >
                   <Play className="w-5 h-5 mr-2" />
                   Explore Gallery
                 </Button>
@@ -274,8 +315,12 @@ export default function HomePage() {
 
                   {/* Content */}
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-white font-bold text-lg mb-1 truncate">{artwork.title}</h3>
-                    <p className="text-gray-300 text-sm mb-2">by {artwork.artist}</p>
+                    <h3 className="text-white font-bold text-lg mb-1 truncate">
+                      {artwork.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm mb-2">
+                      by {artwork.artist}
+                    </p>
                     <div className="flex items-center text-xs text-gray-400">
                       <Eye className="w-3 h-3 mr-1" />
                       {artwork.views} views
@@ -295,17 +340,29 @@ export default function HomePage() {
             <CardContent className="p-0">
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="relative h-64 md:h-full">
-                  <img src="/placeholder-o8lo0.png" alt="Gallery Owner" className="w-full h-full object-cover" />
+                  <img
+                    src="/placeholder-o8lo0.png"
+                    alt="Gallery Owner"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-8 flex flex-col justify-center">
-                  <h2 className="text-3xl font-bold mb-4 text-balance">Meet the Curator</h2>
-                  <h3 className="text-xl text-purple-400 mb-4">Isabella Artisan</h3>
+                  <h2 className="text-3xl font-bold mb-4 text-balance">
+                    Meet the Curator
+                  </h2>
+                  <h3 className="text-xl text-purple-400 mb-4">
+                    Isabella Artisan
+                  </h3>
                   <p className="text-gray-300 leading-relaxed mb-6 text-pretty">
-                    With over 20 years of experience in the art world, Isabella has curated some of the most prestigious
-                    collections globally. Her passion for discovering emerging artists and preserving classical
-                    masterpieces has made Artisan Gallery a beacon for art enthusiasts and collectors alike.
+                    With over 20 years of experience in the art world, Isabella
+                    has curated some of the most prestigious collections
+                    globally. Her passion for discovering emerging artists and
+                    preserving classical masterpieces has made Artisan Gallery a
+                    beacon for art enthusiasts and collectors alike.
                   </p>
-                  <Button className="self-start">Learn More About Our Story</Button>
+                  <Button className="self-start">
+                    Learn More About Our Story
+                  </Button>
                 </div>
               </div>
             </CardContent>
@@ -316,16 +373,22 @@ export default function HomePage() {
       <section className="py-16 px-4 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6 text-balance text-white">Explore Our Collections</h2>
+            <h2 className="text-5xl font-bold mb-6 text-balance text-white">
+              Explore Our Collections
+            </h2>
             <p className="text-gray-400 text-xl max-w-3xl mx-auto text-pretty leading-relaxed">
-              Discover our carefully curated categories, each telling a unique story through the language of art.
+              Discover our carefully curated categories, each telling a unique
+              story through the language of art.
             </p>
             <div className="w-24 h-1 bg-purple-600 mx-auto mt-6 rounded-full"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {categories.map((category, index) => (
-              <Link key={category.name} to={`/category/${category.name.toLowerCase()}`}>
+              <Link
+                key={category.name}
+                to={`/category/${category.name.toLowerCase()}`}
+              >
                 <Card
                   className={`bg-gray-900 border-gray-700 overflow-hidden group hover:scale-105 hover:border-purple-500/50 transition-all duration-500 cursor-pointer shadow-2xl ${
                     index === 1 || index === 4 ? "md:mt-12" : "" // Middle column offset
@@ -342,8 +405,12 @@ export default function HomePage() {
                       <div className="absolute inset-0 bg-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                       <div className="absolute bottom-6 left-6 text-white transform group-hover:translate-y-[-4px] transition-transform duration-300">
-                        <h3 className="text-2xl font-bold mb-2 drop-shadow-lg">{category.name}</h3>
-                        <p className="text-sm opacity-90 drop-shadow-md">{category.count} masterpieces</p>
+                        <h3 className="text-2xl font-bold mb-2 drop-shadow-lg">
+                          {category.name}
+                        </h3>
+                        <p className="text-sm opacity-90 drop-shadow-md">
+                          {category.count} masterpieces
+                        </p>
                         <div className="w-12 h-0.5 bg-purple-600 mt-3 rounded-full group-hover:w-20 transition-all duration-300"></div>
                       </div>
                     </div>
@@ -368,28 +435,43 @@ export default function HomePage() {
                   <span className="text-white font-bold text-xl">A</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">Artisan Gallery</h3>
+                  <h3 className="text-xl font-bold text-white">
+                    Artisan Gallery
+                  </h3>
                   <p className="text-gray-400">Premium Art Collection</p>
                 </div>
               </div>
               <p className="text-gray-400 text-pretty">
-                Discover the world's finest artworks and connect with the stories behind each masterpiece.
+                Discover the world's finest artworks and connect with the
+                stories behind each masterpiece.
               </p>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4 text-white">Quick Links</h4>
               <div className="space-y-2">
-                <Link to="/" className="block text-gray-400 hover:text-purple-400 transition-colors">
+                <Link
+                  to="/"
+                  className="block text-gray-400 hover:text-purple-400 transition-colors"
+                >
                   Home
                 </Link>
-                <Link to="/showcase" className="block text-gray-400 hover:text-purple-400 transition-colors">
+                <Link
+                  to="/showcase"
+                  className="block text-gray-400 hover:text-purple-400 transition-colors"
+                >
                   Showcase
                 </Link>
-                <Link to="/contact" className="block text-gray-400 hover:text-purple-400 transition-colors">
+                <Link
+                  to="/contact"
+                  className="block text-gray-400 hover:text-purple-400 transition-colors"
+                >
                   Contact
                 </Link>
-                <Link to="/news" className="block text-gray-400 hover:text-purple-400 transition-colors">
+                <Link
+                  to="/news"
+                  className="block text-gray-400 hover:text-purple-400 transition-colors"
+                >
                   News
                 </Link>
               </div>
@@ -398,16 +480,28 @@ export default function HomePage() {
             <div>
               <h4 className="font-semibold mb-4 text-white">Connect</h4>
               <div className="space-y-2">
-                <a href="#" className="block text-gray-400 hover:text-purple-400 transition-colors">
+                <a
+                  href="#"
+                  className="block text-gray-400 hover:text-purple-400 transition-colors"
+                >
                   Instagram
                 </a>
-                <a href="#" className="block text-gray-400 hover:text-purple-400 transition-colors">
+                <a
+                  href="#"
+                  className="block text-gray-400 hover:text-purple-400 transition-colors"
+                >
                   Facebook
                 </a>
-                <a href="#" className="block text-gray-400 hover:text-purple-400 transition-colors">
+                <a
+                  href="#"
+                  className="block text-gray-400 hover:text-purple-400 transition-colors"
+                >
                   Twitter
                 </a>
-                <a href="#" className="block text-gray-400 hover:text-purple-400 transition-colors">
+                <a
+                  href="#"
+                  className="block text-gray-400 hover:text-purple-400 transition-colors"
+                >
                   LinkedIn
                 </a>
               </div>
@@ -415,10 +509,12 @@ export default function HomePage() {
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-            <p className="text-gray-400">© 2024 Artisan Gallery. All rights reserved.</p>
+            <p className="text-gray-400">
+              © 2024 Artisan Gallery. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
