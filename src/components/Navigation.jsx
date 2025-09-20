@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Link, useLocation } from "react-router-dom"
-import { Button } from "./ui/button"
-import { Menu, X } from "lucide-react"
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { Button } from "./ui/button";
+import { Menu, X } from "lucide-react";
 
 export default function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const location = useLocation()
-
-  const isActive = (path) => location.pathname === path
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
+  const isActive = (path) => router.pathname === path;
 
   return (
     <header className="relative z-50">
@@ -31,36 +31,45 @@ export default function Navigation() {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
               <Link
-                to="/"
+                href="/"
                 className={`transition-colors font-medium ${
-                  isActive("/") ? "text-white" : "text-gray-300 hover:text-white"
+                  isActive("/")
+                    ? "text-white"
+                    : "text-gray-300 hover:text-white"
                 }`}
               >
                 Home
               </Link>
               <Link
-                to="/showcase"
+                href="/showcase"
                 className={`transition-colors ${
-                  isActive("/showcase") ? "text-white" : "text-gray-300 hover:text-white"
+                  isActive("/showcase")
+                    ? "text-white"
+                    : "text-gray-300 hover:text-white"
                 }`}
               >
                 Showcase
               </Link>
               <Link
-                to="/contact"
+                href="/contact"
                 className={`transition-colors ${
-                  isActive("/contact") ? "text-white" : "text-gray-300 hover:text-white"
+                  isActive("/contact")
+                    ? "text-white"
+                    : "text-gray-300 hover:text-white"
                 }`}
               >
                 Contact
               </Link>
               <Link
-                to="/news"
-                className={`transition-colors ${isActive("/news") ? "text-white" : "text-gray-300 hover:text-white"}`}
+                href="/news"
+                className={`transition-colors ${
+                  isActive("/news")
+                    ? "text-white"
+                    : "text-gray-300 hover:text-white"
+                }`}
               >
                 News
               </Link>
-              <Button className="bg-purple-600 hover:bg-purple-700 text-white px-6">Sign In</Button>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -81,34 +90,42 @@ export default function Navigation() {
         <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-sm border-b border-gray-800 z-40">
           <nav className="container mx-auto px-4 py-4 space-y-4">
             <Link
-              to="/"
-              className={`block transition-colors ${isActive("/") ? "text-white" : "text-gray-300 hover:text-white"}`}
+              href="/"
+              className={`block transition-colors ${
+                isActive("/") ? "text-white" : "text-gray-300 hover:text-white"
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link
-              to="/showcase"
+              href="/showcase"
               className={`block transition-colors ${
-                isActive("/showcase") ? "text-white" : "text-gray-300 hover:text-white"
+                isActive("/showcase")
+                  ? "text-white"
+                  : "text-gray-300 hover:text-white"
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Showcase
             </Link>
             <Link
-              to="/contact"
+              href="/contact"
               className={`block transition-colors ${
-                isActive("/contact") ? "text-white" : "text-gray-300 hover:text-white"
+                isActive("/contact")
+                  ? "text-white"
+                  : "text-gray-300 hover:text-white"
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
             </Link>
             <Link
-              to="/news"
+              href="/news"
               className={`block transition-colors ${
-                isActive("/news") ? "text-white" : "text-gray-300 hover:text-white"
+                isActive("/news")
+                  ? "text-white"
+                  : "text-gray-300 hover:text-white"
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -118,5 +135,5 @@ export default function Navigation() {
         </div>
       )}
     </header>
-  )
+  );
 }
