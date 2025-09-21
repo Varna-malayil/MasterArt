@@ -7,8 +7,8 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Artisan Gallery - Premium Art Collection",
-  description: "Discover exquisite paintings and artworks at Artisan Gallery",
+  title: "Master Art - Premium Art Collection",
+  description: "Discover exquisite paintings and artworks at Master Art",
   generator: "v0.app",
 }
 
