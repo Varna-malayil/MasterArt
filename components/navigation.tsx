@@ -5,11 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Baloo_2 } from "next/font/google";
+import { Poiret_One } from "next/font/google";
 
-const baloo = Baloo_2({
+const poiretOne = Poiret_One({
   subsets: ["latin"],
-  weight: ["700"],
+  weight: "400",
 });
 
 export function Navigation() {
@@ -24,7 +24,7 @@ export function Navigation() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center">
+              <div className="w-24 h-12 rounded-lg overflow-hidden flex items-center justify-center">
                 <img
                   src="/masters-logo.png"
                   alt="Masters Logo"
@@ -32,12 +32,14 @@ export function Navigation() {
                 />
               </div>
 
-              <div><Link href="/">
-                <h1
-                  className={`text-3xl md:text-4xl  ml-3 tracking-wider bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent ${baloo.className}`}
-                >
-                  Master Arts
-                </h1></Link>
+              <div>
+                <Link href="/">
+                  <h1
+                    className={`text-3xl md:text-4xl  tracking-wider bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent ${poiretOne.className}`}
+                  >
+                    Master Fine Arts
+                  </h1>
+                </Link>
               </div>
             </div>
 

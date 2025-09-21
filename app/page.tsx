@@ -6,11 +6,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Menu, X, Play, Info, Eye, Instagram, Facebook } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Baloo_2 } from "next/font/google";
+import { Poiret_One } from "next/font/google";
 
-const baloo = Baloo_2({
+const poiretOne = Poiret_One({
   subsets: ["latin"],
-  weight: ["700"],
+  weight: "400",
 });
 
 export default function HomePage() {
@@ -164,7 +164,7 @@ export default function HomePage() {
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center">
+                <div className="w-24 h-12 rounded-lg overflow-hidden flex items-center justify-center">
                   <img
                     src="/masters-logo.png"
                     alt="Masters Logo"
@@ -173,12 +173,13 @@ export default function HomePage() {
                 </div>
 
                 <div>
-                <Link href="/">
-                  <h1
-                    className={`text-3xl md:text-4xl  ml-3 tracking-wider bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent ${baloo.className}`}
-                  >
-                    Master Arts
-                  </h1></Link>
+                  <Link href="/">
+                    <h1
+                      className={`text-3xl md:text-4xl  tracking-wider bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent ${poiretOne.className}`}
+                    >
+                      Master Fine Arts
+                    </h1>
+                  </Link>
                 </div>
               </div>
 
@@ -369,7 +370,10 @@ export default function HomePage() {
                   <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
                     Meet the <span className="text-purple-400">Curator</span>
                   </h2>
-                  <h3 className="text-2xl text-purple-400 mb-4">Suresh</h3>
+                  <h3 className="text-2xl text-purple-400 mb-4">
+                    {" "}
+                    Master Suresh
+                  </h3>
                   <p className="text-gray-300 leading-relaxed mb-6">
                     Highly talented and versatile fine artist/illustrator with
                     experience in storyboarding, set and costume design, pattern
@@ -458,7 +462,7 @@ export default function HomePage() {
             {/* Logo and Description */}
             <div className="col-span-1 md:col-span-2 flex flex-col items-center md:items-start">
               <div className="flex items-center space-x-4 mb-4">
-                <div className="w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center">
+                <div className="w-24 h-24 rounded-lg overflow-hidden flex items-center justify-center">
                   <img
                     src="/masters-logo.png"
                     alt="Masters Logo"
@@ -466,12 +470,13 @@ export default function HomePage() {
                   />
                 </div>
                 <div>
-                <Link href="/">
-                  <h3
-                    className={`text-3xl md:text-4xl  ml-3 tracking-wider bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent ${baloo.className}`}
-                  >
-                    Master Arts
-                  </h3></Link>
+                  <Link href="/">
+                    <h3
+                      className={`text-3xl md:text-4xl  ml-3 tracking-wider bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent ${poiretOne.className}`}
+                    >
+                      Master Fine Arts
+                    </h3>
+                  </Link>
                   <p className="text-gray-400">Premium Art Collections</p>
                 </div>
               </div>
@@ -534,7 +539,7 @@ export default function HomePage() {
           {/* Footer Bottom */}
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
             <p className="text-gray-400">
-              © 2025 Masters. All rights reserved.
+              © 2025 Master Fine Arts. All rights reserved.
             </p>
           </div>
         </div>
