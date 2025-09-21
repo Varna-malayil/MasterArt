@@ -19,7 +19,7 @@ export default function ContactPage() {
       />
 
       {/* Contact Content */}
-      <section className="p-16 px-40 bg-gradient-to-b from-black to-gray-900">
+      <section className="p-4 sm:p-8 md:p-16 lg:px-40 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto flex flex-col lg:flex-row gap-12">
           {/* Contact Information - Left */}
           <div className="flex-1 space-y-8">
@@ -52,9 +52,16 @@ export default function ContactPage() {
 
               <div className="flex items-start space-x-4">
                 <Mail className="h-6 w-6 text-purple-600 mt-1" />
-                <div>
+                <div className="flex-1">
                   <h3 className="font-semibold mb-1">Email</h3>
-                  <p className="text-gray-400">mastersureshcmd@gmail.com</p>
+                  <p className="text-gray-400 break-all w-full">
+                    <a
+                      href="mailto:mastersureshcmd@gmail.com"
+                      className="hover:underline"
+                    >
+                      mastersureshcmd@gmail.com
+                    </a>
+                  </p>
                 </div>
               </div>
 
@@ -73,7 +80,7 @@ export default function ContactPage() {
           </div>
 
           {/* Map - Right */}
-          <div className="flex-1 my-20 ms-30">
+          <div className="flex-1 my-8 ms-0">
             <Card className="glass-card overflow-hidden">
               <CardContent className="p-0">
                 <div className="h-64 bg-muted relative">

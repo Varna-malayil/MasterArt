@@ -32,12 +32,12 @@ export function Navigation() {
                 />
               </div>
 
-              <div>
+              <div><Link href="/">
                 <h1
                   className={`text-3xl md:text-4xl  ml-3 tracking-wider bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent ${baloo.className}`}
                 >
                   Master Arts
-                </h1>
+                </h1></Link>
               </div>
             </div>
 
