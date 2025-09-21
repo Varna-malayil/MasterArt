@@ -35,7 +35,7 @@ export function Navigation() {
               <div>
                 <Link href="/">
                   <h1
-                    className={`text-3xl md:text-4xl  tracking-wider bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent ${poiretOne.className}`}
+                    className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-wider whitespace-nowrap bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent ${poiretOne.className}`}
                   >
                     Master Fine Arts
                   </h1>
